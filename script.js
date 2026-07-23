@@ -6,9 +6,12 @@
   var links = document.getElementById('nav-links');
   if (!toggle || !links) return;
 
-  function closeMenu() {
+  function closeMenu(restoreFocus) {
+    if (!links.classList.contains('is-open')) return;
     links.classList.remove('is-open');
     toggle.setAttribute('aria-expanded', 'false');
+    // Return focus to the toggle so keyboard users aren't dropped on <body>.
+    if (restoreFocus) toggle.focus();
   }
 
   toggle.addEventListener('click', function () {
@@ -21,8 +24,8 @@
     if (e.target.closest('a')) closeMenu();
   });
 
-  // Close on Escape for keyboard users.
+  // Close on Escape for keyboard users, restoring focus to the toggle.
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') closeMenu();
+    if (e.key === 'Escape') closeMenu(true);
   });
 })();

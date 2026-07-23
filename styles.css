@@ -199,6 +199,8 @@ img { display: block; max-width: 100%; }
   border-bottom: 1px solid var(--accent);
   padding-bottom: 3px;
 }
+.btn--link:hover,
+.btn--link:focus-visible { color: var(--accent); }
 
 /* ============================================================
    MENU
@@ -368,9 +370,12 @@ img { display: block; max-width: 100%; }
     box-shadow: 0 20px 40px rgba(43, 58, 82, .14);
     max-height: 0;
     overflow: hidden;
-    transition: max-height .28s ease;
+    /* visibility:hidden pulls the collapsed links out of the tab order so
+       keyboard/AT users don't land on invisible, clipped links. */
+    visibility: hidden;
+    transition: max-height .28s ease, visibility .28s ease;
   }
-  .nav__links.is-open { max-height: 240px; }
+  .nav__links.is-open { max-height: 240px; visibility: visible; }
   .nav__links a {
     padding: 16px 22px;
     border-bottom: 1px solid var(--line);
