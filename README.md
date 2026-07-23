@@ -1,25 +1,40 @@
-# CODING AGENTS: READ THIS FIRST
+# Mother-in-Law's Bistro
 
-This is a **handoff bundle** from Claude Design (claude.ai/design).
+Marketing landing page for Mother-in-Law's Bistro — elevated home cooking in
+Cos Cob, Connecticut (207 Valley Road).
 
-A user mocked up designs in HTML/CSS/JS using an AI design tool, then exported this bundle so a coding agent can implement the designs for real.
+Built as a single, responsive static page from the approved **Hydrangea Blue**
+design ("2b (final)") exported from Claude Design.
 
-## What you should do — IMPORTANT
+## Run it
 
-**Read the chat transcripts first.** There are 1 chat transcript(s) in `chats/`. The transcripts show the full back-and-forth between the user and the design assistant — they tell you **what the user actually wants** and **where they landed** after iterating. Don't skip them. The final HTML files are the output, but the chat is where the intent lives.
+No build step. Open `index.html` directly, or serve the folder:
 
-**Read `project/Mother-in-Laws-Bistro.dc.html` in full.** The user had this file open when they triggered the handoff, so it's almost certainly the primary design they want built. Read it top to bottom — don't skim. Then **follow its imports**: open every file it pulls in (shared components, CSS, scripts) so you understand how the pieces fit together before you start implementing.
+```bash
+python3 -m http.server 8000
+# → http://localhost:8000
+```
 
-**If anything is ambiguous, ask the user to confirm before you start implementing.** It's much cheaper to clarify scope up front than to build the wrong thing.
+## Structure
 
-## About the design files
+```
+index.html        markup (nav, hero, menu, story/visit, footer)
+styles.css        design tokens + responsive layout
+script.js         mobile nav toggle
+assets/images/    the four dish photos
+project/          original Claude Design handoff bundle (source of truth)
+chats/            design conversation transcript
+```
 
-The design medium is **HTML/CSS/JS** — these are prototypes, not production code. Your job is to **recreate them pixel-perfectly** in whatever technology makes sense for the target codebase (React, Vue, native, whatever fits). Match the visual output; don't copy the prototype's internal structure unless it happens to fit.
+## Design notes
 
-**Don't render these files in a browser or take screenshots unless the user asks you to.** Everything you need — dimensions, colors, layout rules — is spelled out in the source. Read the HTML and CSS directly; a screenshot won't tell you anything they don't.
-
-## Bundle contents
-
-- `README.md` — this file
-- `chats/` — conversation transcripts (read these!)
-- `project/` — the `Mother-in-Law's Bistro Design` project files (HTML prototypes, assets, components)
+- **Palette** — carried over verbatim from the approved design. The accent
+  (`#3d689e`) and label (`#5d7186`) blues were darkened during the design
+  review so all text passes WCAG AA contrast.
+- **Type** — DM Serif Display (display), Karla (body), Caveat (script
+  accents), Jost (labels/nav/buttons), loaded from Google Fonts.
+- **Responsive** — the 1180px desktop layout collapses to a single column;
+  below 720px the nav becomes a hamburger menu, matching the 390px mobile
+  comp from the design.
+- **Interactivity** — nav links smooth-scroll to sections, the phone number
+  is a `tel:` link, and the hamburger toggles the mobile menu. No backend.
