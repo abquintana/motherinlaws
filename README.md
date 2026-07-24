@@ -26,22 +26,23 @@ project/          original Claude Design handoff bundle (source of truth)
 chats/            design conversation transcript
 ```
 
-### The Scene gallery — photo swap
+### The Scene gallery
 
 The `#scene` gallery (first nav item, full-width band right after the hero) is
-a candid photo gallery: a two-image feature row over a CSS multi-column masonry
-(`column-count: 3` desktop / `2` mobile, `break-inside: avoid`).
+a candid photo gallery — the heart of the site: a two-image feature row over a
+CSS multi-column masonry (`column-count: 3` desktop / `2` mobile,
+`break-inside: avoid`). Family gathering shots are intermixed with plated-dish
+photos for rhythm.
 
-The feature row is meant to hold **family photos**, which aren't in this repo.
-Two placeholder images stand in for them — replace these files in place (keep
-the names/paths) with the real photos and no markup changes are needed:
+- Feature row — `scene-kitchen.jpeg` (grandmother + granddaughter cooking) and
+  the larger, right-anchored `scene-family.jpeg` (the family birthday group).
+- Masonry — the family shots (`scene-dinner`, `scene-gingerbread`,
+  `scene-generations`) woven through the dish photos; the landscape gingerbread
+  shot is placed to break up the portrait columns.
 
-- `assets/images/scene-kitchen.jpeg` → mother-in-law + granddaughter in the kitchen
-- `assets/images/scene-family.jpeg`  → the full family birthday group photo
-
-The masonry below is populated with the available plated-dish and table-scene
-photos; drop additional images into `assets/images/` and add `<img>` tags to
-`.scene__grid` to extend it.
+To extend the gallery, drop images into `assets/images/` and add `<img>` tags
+(with `width`/`height`) to `.scene__grid`. On mobile the feature row collapses
+to a single full-width `scene-family.jpeg` banner above a two-column grid.
 
 ## Design notes
 
