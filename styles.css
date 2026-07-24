@@ -1,0 +1,428 @@
+/* ============================================================
+   Mother-in-Law's Bistro — Hydrangea Blue (final palette)
+   Colors carried over verbatim from the approved design;
+   accent (#3d689e) and label (#5d7186) were darkened during
+   design review to pass WCAG AA text contrast.
+   ============================================================ */
+
+:root {
+  --paper:    #f4f7fb;  /* page + card surfaces */
+  --panel:    #e7eef7;  /* story band */
+  --ink:      #2b3a52;  /* headings / strong text */
+  --accent:   #3d689e;  /* links, prices, script accents */
+  --label:    #5d7186;  /* eyebrow labels */
+  --body:     #5a6675;  /* body copy */
+  --line:     #d9e3f0;  /* hairline borders */
+  --hero-bg:  #dde8f4;  /* image backdrop */
+  --footer:   #2b3a52;
+  --shell-max: 1180px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--body);
+  font-family: 'Karla', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a { color: inherit; text-decoration: none; }
+
+img { display: block; max-width: 100%; }
+
+.site {
+  max-width: var(--shell-max);
+  margin: 0 auto;
+  background: var(--paper);
+  box-shadow: 0 30px 80px rgba(43, 58, 82, .18);
+}
+
+/* ---------- shared type helpers ---------- */
+.eyebrow {
+  font-family: 'Jost', sans-serif;
+  letter-spacing: .34em;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: var(--label);
+}
+.script {
+  font-family: 'Caveat', cursive;
+  font-size: 28px;
+  color: var(--accent);
+}
+.section-head { text-align: center; }
+.section-title {
+  margin: 10px 0 0;
+  font-family: 'DM Serif Display', serif;
+  font-size: 44px;
+  color: var(--ink);
+}
+
+/* ============================================================
+   NAV
+   ============================================================ */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 26px 56px;
+  border-bottom: 1px solid var(--line);
+  position: relative;
+}
+.nav__brand {
+  font-family: 'Caveat', cursive;
+  font-size: 27px;
+  color: var(--accent);
+}
+.nav__brand--mobile { display: none; }
+
+.nav__links {
+  display: flex;
+  gap: 38px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  font-size: 15.5px;
+  letter-spacing: .03em;
+  color: var(--ink);
+}
+.nav__links a {
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: color .18s ease, border-color .18s ease;
+}
+.nav__links a:hover,
+.nav__links a:focus-visible {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.nav__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: 0;
+  padding: 6px;
+  cursor: pointer;
+}
+.nav__toggle span {
+  width: 22px;
+  height: 2px;
+  background: var(--ink);
+  display: block;
+  transition: transform .25s ease, opacity .2s ease;
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+}
+.hero__copy {
+  padding: 70px 56px 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 26px;
+}
+.hero__title {
+  margin: 0;
+  font-family: 'DM Serif Display', serif;
+  font-size: 74px;
+  line-height: .98;
+  letter-spacing: -.01em;
+  color: var(--ink);
+}
+.hero__title em { font-style: italic; color: var(--accent); }
+.hero__lede {
+  margin: 0;
+  max-width: 420px;
+  font-size: 17.5px;
+  line-height: 1.7;
+  color: var(--body);
+}
+.hero__actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+.hero__media {
+  position: relative;
+  min-height: 520px;
+  background: var(--hero-bg);
+}
+.hero__media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.tag {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  background: rgba(244, 247, 251, .94);
+  padding: 12px 18px;
+  border-radius: 3px;
+  font-family: 'Caveat', cursive;
+  font-size: 22px;
+  color: var(--accent);
+}
+
+/* ---------- buttons ---------- */
+.btn {
+  font-family: 'Jost', sans-serif;
+  font-size: 14px;
+  letter-spacing: .08em;
+}
+.btn--solid {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 15px 30px;
+  border-radius: 999px;
+  transition: background .18s ease;
+}
+.btn--solid:hover,
+.btn--solid:focus-visible { background: #3a4d6c; }
+.btn--link {
+  color: var(--ink);
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 3px;
+}
+.btn--link:hover,
+.btn--link:focus-visible { color: var(--accent); }
+
+/* ============================================================
+   MENU
+   ============================================================ */
+.menu { padding: 64px 56px; }
+.menu .section-head { padding-bottom: 34px; }
+.menu__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 34px 40px;
+}
+.dish {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+}
+.dish__photo {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  flex: none;
+  box-shadow: 0 10px 26px rgba(43, 58, 82, .16);
+}
+.dish__body {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.dish__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 14px;
+}
+.dish__name {
+  margin: 0;
+  font-family: 'DM Serif Display', serif;
+  font-size: 23px;
+  color: var(--ink);
+}
+.dish__price {
+  font-family: 'DM Serif Display', serif;
+  font-size: 20px;
+  color: var(--accent);
+  flex: none;
+}
+.dish__desc {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--body);
+}
+
+/* ============================================================
+   STORY + VISIT
+   ============================================================ */
+.story {
+  padding: 60px 56px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  background: var(--panel);
+}
+.story__text {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.story__title {
+  margin: 0;
+  font-family: 'DM Serif Display', serif;
+  font-size: 38px;
+  line-height: 1.1;
+  color: var(--ink);
+}
+.story__body {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--body);
+}
+.visit-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: var(--paper);
+  padding: 34px;
+  border-radius: 4px;
+  box-shadow: 0 14px 40px rgba(43, 58, 82, .12);
+}
+.visit-card__title {
+  margin: 0;
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  color: var(--ink);
+}
+.visit-card__lines {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 15px;
+  color: var(--body);
+  line-height: 1.5;
+}
+.visit-card__lines strong { color: var(--ink); }
+.visit-card__lines a { border-bottom: 1px solid var(--accent); }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+  display: flex;
+  flex-direction: column;
+  background: var(--footer);
+  color: var(--paper);
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  letter-spacing: .05em;
+}
+.footer__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 34px 56px;
+}
+.footer__name {
+  font-family: 'DM Serif Display', serif;
+  font-size: 20px;
+  letter-spacing: 0;
+}
+.footer__legal {
+  border-top: 1px solid rgba(244, 247, 251, .18);
+  padding: 16px 56px;
+  text-align: center;
+  font-size: 12px;
+  color: #c3cedd;
+}
+.footer__legal a { text-decoration: underline; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero__media { order: -1; min-height: 320px; }
+  .menu__grid { gap: 30px; }
+}
+
+@media (max-width: 720px) {
+  /* nav collapses to hamburger */
+  .nav { padding: 18px 22px; }
+  .nav__brand--desktop { display: none; }
+  .nav__brand--mobile { display: block; font-size: 20px; }
+  .nav__toggle { display: flex; }
+  .nav__links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    z-index: 20;
+    flex-direction: column;
+    gap: 0;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 20px 40px rgba(43, 58, 82, .14);
+    max-height: 0;
+    overflow: hidden;
+    /* visibility:hidden pulls the collapsed links out of the tab order so
+       keyboard/AT users don't land on invisible, clipped links. */
+    visibility: hidden;
+    transition: max-height .28s ease, visibility .28s ease;
+  }
+  .nav__links.is-open { max-height: 240px; visibility: visible; }
+  .nav__links a {
+    padding: 16px 22px;
+    border-bottom: 1px solid var(--line);
+  }
+  .nav__links a:hover,
+  .nav__links a:focus-visible { border-bottom-color: var(--line); }
+
+  /* stack everything */
+  .hero__copy { padding: 30px 22px 36px; gap: 18px; }
+  .hero__title { font-size: 42px; line-height: 1; }
+  .hero__lede { font-size: 15.5px; max-width: none; }
+  .hero__media { min-height: 280px; }
+  .btn--solid { text-align: center; }
+
+  .menu { padding: 30px 22px 40px; }
+  .menu .section-head { padding-bottom: 4px; }
+  .section-title { font-size: 30px; }
+  .menu__grid { grid-template-columns: 1fr; gap: 26px; }
+  .dish { flex-direction: column; align-items: stretch; gap: 12px; }
+  .dish__photo { width: 100%; height: 170px; border-radius: 10px; }
+  .dish__name { font-size: 19px; }
+  .dish__price { font-size: 18px; }
+  .dish__desc { font-size: 14px; }
+
+  .story {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 36px 22px;
+  }
+  .story .script { font-size: 22px; }
+  .story__title { font-size: 26px; line-height: 1.15; }
+  .story__body { font-size: 14.5px; line-height: 1.7; }
+  .visit-card { padding: 22px; border-radius: 12px; margin-top: 6px; }
+  .visit-card__title { font-size: 19px; }
+  .visit-card__lines { font-size: 14px; }
+
+  .footer__top {
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+    padding: 24px 22px;
+  }
+  .footer__name { font-size: 17px; }
+  .footer__legal { padding: 14px 22px; font-size: 11px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}

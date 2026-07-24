@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mother-in-Law's Bistro &middot; Cos Cob, CT</title>
+  <meta name="description" content="Mother-in-Law's Bistro — elevated home cooking in Cos Cob, Connecticut. 207 Valley Road. Dinner Tue–Sun, brunch on weekends.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Karla:wght@300;400;500;600;700&family=Caveat:wght@500;600&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="site">
+
+    <!-- ============ NAV ============ -->
+    <nav class="nav" aria-label="Primary">
+      <a href="#top" class="nav__brand nav__brand--desktop">Est. at the family table</a>
+      <a href="#top" class="nav__brand nav__brand--mobile">Mother-in-Law's</a>
+
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav__links" id="nav-links">
+        <a href="#menu">Menu</a>
+        <a href="#story">Our Story</a>
+        <a href="#visit">Visit</a>
+      </div>
+    </nav>
+
+    <main>
+    <!-- ============ HERO ============ -->
+    <header class="hero" id="top">
+      <div class="hero__copy">
+        <span class="eyebrow">Cos Cob, Connecticut</span>
+        <h1 class="hero__title">Mother-in-Law's<br><em>Bistro</em></h1>
+        <p class="hero__lede">Elevated home cooking, served the way she always meant it &mdash; generous, unhurried, and just a little bit fussy. Good plates, better company.</p>
+        <div class="hero__actions">
+          <a href="#menu" class="btn btn--solid">View the Menu</a>
+          <a href="tel:+12038675309" class="btn btn--link">Call to reserve &middot; (203) 867-5309</a>
+        </div>
+      </div>
+      <div class="hero__media">
+        <img src="assets/images/salmon.jpeg" alt="Crispy-skin salmon plated at the bistro" width="768" height="1024" fetchpriority="high">
+        <span class="tag">tonight's catch</span>
+      </div>
+    </header>
+
+    <!-- ============ MENU ============ -->
+    <section class="menu" id="menu">
+      <div class="section-head">
+        <span class="eyebrow">From our kitchen</span>
+        <h2 class="section-title">A few things we love</h2>
+      </div>
+      <div class="menu__grid">
+        <article class="dish">
+          <img class="dish__photo" src="assets/images/salmon.jpeg" alt="Judy's brown sugar-rubbed salmon" width="768" height="1024" loading="lazy">
+          <div class="dish__body">
+            <div class="dish__head">
+              <h3 class="dish__name">Judy's Brown Sugar-Rubbed Salmon</h3>
+              <span class="dish__price">34</span>
+            </div>
+            <p class="dish__desc">Brown sugar-rubbed and seared to a crackle over pearl couscous &amp; garlicky wilted greens.</p>
+          </div>
+        </article>
+
+        <article class="dish">
+          <img class="dish__photo" src="assets/images/paella.jpeg" alt="Penelope's paella in cast iron" width="1200" height="1600" loading="lazy">
+          <div class="dish__body">
+            <div class="dish__head">
+              <h3 class="dish__name">Penelope's Paella</h3>
+              <span class="dish__price">28</span>
+            </div>
+            <p class="dish__desc">Saffron rice baked in cast iron with sweet peppers, peas &amp; charred greens.</p>
+          </div>
+        </article>
+
+        <article class="dish">
+          <img class="dish__photo" src="assets/images/ahi-tuna.jpeg" alt="Ari's seared ahi tuna" width="1200" height="1600" loading="lazy">
+          <div class="dish__body">
+            <div class="dish__head">
+              <h3 class="dish__name">Ari's Ahi Tuna</h3>
+              <span class="dish__price">29</span>
+            </div>
+            <p class="dish__desc">Seared rare over crisp radish, edamame &amp; mint with a stone-fruit relish.</p>
+          </div>
+        </article>
+
+        <article class="dish">
+          <img class="dish__photo" src="assets/images/avocado-toast.jpeg" alt="Susana's avocado toast" width="768" height="1024" loading="lazy">
+          <div class="dish__body">
+            <div class="dish__head">
+              <h3 class="dish__name">Susana's Avocado Toast</h3>
+              <span class="dish__price">16</span>
+            </div>
+            <p class="dish__desc">Smashed avocado on sourdough with market strawberries. Weekend brunch.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ STORY + VISIT ============ -->
+    <section class="story" id="story">
+      <div class="story__text">
+        <span class="script">our story</span>
+        <h2 class="story__title">Everyone deserves a seat at her table.</h2>
+        <p class="story__body">She never wrote anything down &mdash; a pinch of this, whatever the garden gave up that week. We spent years learning her measurements. This is the closest we've come: comfort food dressed for company, made from good ingredients and a little bit of stubbornness.</p>
+      </div>
+      <div class="visit-card" id="visit">
+        <h3 class="visit-card__title">Come sit down</h3>
+        <div class="visit-card__lines">
+          <div><strong>207 Valley Road</strong><br>Cos Cob, CT 06807</div>
+          <div><strong>Dinner</strong> &middot; Tue&ndash;Sun, 5&ndash;10pm<br><strong>Brunch</strong> &middot; Sat &amp; Sun, 10am&ndash;2pm</div>
+          <div><strong>Reservations</strong><br><a href="tel:+12038675309">(203) 867-5309</a></div>
+        </div>
+      </div>
+    </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+      <div class="footer__top">
+        <span class="footer__name">Mother-in-Law's Bistro</span>
+        <span class="footer__meta">207 Valley Road, Cos Cob CT &middot; <a href="tel:+12038675309">(203) 867-5309</a></span>
+      </div>
+      <div class="footer__legal">&copy; 2026 &middot; <a href="https://www.shippingonfridays.com/" target="_blank" rel="noopener">Shipping on Fridays LLC</a> &middot; Made with &#10084;&#65039; in Cos Cob.</div>
+    </footer>
+
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
