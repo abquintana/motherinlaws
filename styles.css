@@ -203,6 +203,49 @@ img { display: block; max-width: 100%; }
 .btn--link:focus-visible { color: var(--accent); }
 
 /* ============================================================
+   THE SCENE — photo gallery
+   ============================================================ */
+.scene {
+  padding: 60px 56px;
+  background: var(--panel);
+}
+.scene__head { padding-bottom: 34px; }
+
+.scene__feature {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+.scene__feature-img {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.scene__feature-img--kitchen { flex: 0 0 36%; }
+.scene__feature-img--family {
+  flex: 1;
+  object-position: center 42%;
+  box-shadow: 0 22px 54px rgba(43, 58, 82, .22);
+}
+
+.scene__grid {
+  column-count: 3;
+  column-gap: 18px;
+  /* soak up the trailing margin on the bottom row */
+  margin-bottom: -18px;
+}
+.scene__grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  break-inside: avoid;
+  border-radius: 4px;
+  margin-bottom: 18px;
+  box-shadow: 0 8px 24px rgba(43, 58, 82, .14);
+}
+
+/* ============================================================
    MENU
    ============================================================ */
 .menu { padding: 64px 56px; }
@@ -389,6 +432,19 @@ img { display: block; max-width: 100%; }
   .hero__lede { font-size: 15.5px; max-width: none; }
   .hero__media { min-height: 280px; }
   .btn--solid { text-align: center; }
+
+  /* The Scene: feature collapses to a single family banner + 2-col grid */
+  .scene { padding: 40px 22px; }
+  .scene__head { padding-bottom: 20px; }
+  .scene__feature { margin-bottom: 12px; }
+  .scene__feature-img--kitchen { display: none; }
+  .scene__feature-img--family { height: 240px; }
+  .scene__grid {
+    column-count: 2;
+    column-gap: 12px;
+    margin-bottom: -12px;
+  }
+  .scene__grid img { margin-bottom: 12px; }
 
   .menu { padding: 30px 22px 40px; }
   .menu .section-head { padding-bottom: 4px; }
