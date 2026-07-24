@@ -54,5 +54,5 @@ to a single full-width `scene-family.jpeg` banner above a two-column grid.
 - **Responsive** — the 1180px desktop layout collapses to a single column;
   below 720px the nav becomes a hamburger menu, matching the 390px mobile
   comp from the design.
-- **Interactivity** — nav links smooth-scroll to sections, the phone number
-  is a `tel:` link, and the hamburger toggles the mobile menu. No backend.
+- **Interactivity** — nav links smooth-scroll to sections and the hamburger
+  toggles the mobile menu. No backend.

@@ -194,14 +194,6 @@ img { display: block; max-width: 100%; }
 }
 .btn--solid:hover,
 .btn--solid:focus-visible { background: #3a4d6c; }
-.btn--link {
-  color: var(--ink);
-  border-bottom: 1px solid var(--accent);
-  padding-bottom: 3px;
-}
-.btn--link:hover,
-.btn--link:focus-visible { color: var(--accent); }
-
 /* ============================================================
    THE SCENE — photo gallery
    ============================================================ */
@@ -306,7 +298,7 @@ img { display: block; max-width: 100%; }
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 48px;
-  align-items: center;
+  align-items: start;
   background: var(--panel);
 }
 .story__text {
@@ -351,7 +343,6 @@ img { display: block; max-width: 100%; }
   line-height: 1.5;
 }
 .visit-card__lines strong { color: var(--ink); }
-.visit-card__lines a { border-bottom: 1px solid var(--accent); }
 
 /* ============================================================
    FOOTER
