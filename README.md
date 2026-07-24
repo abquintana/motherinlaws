@@ -18,13 +18,31 @@ python3 -m http.server 8000
 ## Structure
 
 ```
-index.html        markup (nav, hero, menu, story/visit, footer)
+index.html        markup (nav, hero, scene, menu, story/visit, footer)
 styles.css        design tokens + responsive layout
 script.js         mobile nav toggle
-assets/images/    the four dish photos
+assets/images/    dish + scene photos
 project/          original Claude Design handoff bundle (source of truth)
 chats/            design conversation transcript
 ```
+
+### The Scene gallery
+
+The `#scene` gallery (first nav item, full-width band right after the hero) is
+a candid photo gallery — the heart of the site: a two-image feature row over a
+CSS multi-column masonry (`column-count: 3` desktop / `2` mobile,
+`break-inside: avoid`). Family gathering shots are intermixed with plated-dish
+photos for rhythm.
+
+- Feature row — `scene-kitchen.jpeg` (grandmother + granddaughter cooking) and
+  the larger, right-anchored `scene-family.jpeg` (the family birthday group).
+- Masonry — the family shots (`scene-dinner`, `scene-gingerbread`,
+  `scene-generations`) woven through the dish photos; the landscape gingerbread
+  shot is placed to break up the portrait columns.
+
+To extend the gallery, drop images into `assets/images/` and add `<img>` tags
+(with `width`/`height`) to `.scene__grid`. On mobile the feature row collapses
+to a single full-width `scene-family.jpeg` banner above a two-column grid.
 
 ## Design notes
 
