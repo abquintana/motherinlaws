@@ -392,10 +392,9 @@ img { display: block; max-width: 100%; }
   .hero { grid-template-columns: 1fr; }
   .hero__media { order: -1; min-height: 320px; }
   .menu__grid { gap: 30px; }
-}
 
-@media (max-width: 720px) {
-  /* nav collapses to hamburger */
+  /* nav collapses to hamburger — kept in step with the hero stack so the long
+     desktop brand + full link row never crowd in the 721–900px band */
   .nav { padding: 18px 22px; }
   .nav__brand--desktop { display: none; }
   .nav__brand--mobile { display: block; font-size: 20px; }
@@ -418,7 +417,7 @@ img { display: block; max-width: 100%; }
     visibility: hidden;
     transition: max-height .28s ease, visibility .28s ease;
   }
-  .nav__links.is-open { max-height: 240px; visibility: visible; }
+  .nav__links.is-open { max-height: 300px; visibility: visible; }
   .nav__links a {
     padding: 16px 22px;
     border-bottom: 1px solid var(--line);
@@ -426,6 +425,13 @@ img { display: block; max-width: 100%; }
   .nav__links a:hover,
   .nav__links a:focus-visible { border-bottom-color: var(--line); }
 
+  /* The Scene: collapse the feature row to a single family banner so the
+     narrow kitchen image never becomes a skinny sliver on tablets */
+  .scene__feature-img--kitchen { display: none; }
+  .scene__feature-img--family { height: 300px; }
+}
+
+@media (max-width: 720px) {
   /* stack everything */
   .hero__copy { padding: 30px 22px 36px; gap: 18px; }
   .hero__title { font-size: 42px; line-height: 1; }
@@ -433,11 +439,10 @@ img { display: block; max-width: 100%; }
   .hero__media { min-height: 280px; }
   .btn--solid { text-align: center; }
 
-  /* The Scene: feature collapses to a single family banner + 2-col grid */
+  /* The Scene: tighter padding + 2-col grid; family banner a touch shorter */
   .scene { padding: 40px 22px; }
   .scene__head { padding-bottom: 20px; }
   .scene__feature { margin-bottom: 12px; }
-  .scene__feature-img--kitchen { display: none; }
   .scene__feature-img--family { height: 240px; }
   .scene__grid {
     column-count: 2;
