@@ -70,3 +70,10 @@ the button wording does. Keep them concrete if you revise the copy.
   comp from the design.
 - **Interactivity** — nav links smooth-scroll to sections and the hamburger
   toggles the mobile menu. No backend.
+- **Analytics** — Vercel Web Analytics via the plain-HTML script tag
+  (`/_vercel/insights/script.js`), not the `@vercel/analytics` package, which
+  would need a build step this site doesn't have. Page views only. The endpoint
+  is served by Vercel once Analytics is enabled for the project and the site is
+  redeployed; anywhere else (including a local `http.server`) it 404s and the
+  page is unaffected. Custom events would additionally need the `window.va`
+  shim from Vercel's snippet, deliberately omitted while nothing fires events.

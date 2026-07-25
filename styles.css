@@ -56,6 +56,18 @@ img { display: block; max-width: 100%; }
   color: var(--accent);
 }
 .section-head { text-align: center; }
+/* visible to screen readers only — used to flag links that open a new tab */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
 .section-title {
   margin: 10px 0 0;
   font-family: 'DM Serif Display', serif;
@@ -501,8 +513,9 @@ img { display: block; max-width: 100%; }
   .hero__lede { font-size: 15.5px; max-width: none; }
   .hero__media { min-height: 280px; }
   .hero__note { font-size: 13.5px; }
+  /* .btn--solid only: it stretches full-width inside .share__actions, so the
+     centring bites there. .btn--quiet is always content-width. */
   .btn--solid { text-align: center; }
-  .btn--quiet { text-align: center; }
 
   /* The Scene: tighter padding + 2-col grid; family banner a touch shorter */
   .scene { padding: 40px 22px; }
