@@ -56,6 +56,18 @@ img { display: block; max-width: 100%; }
   color: var(--accent);
 }
 .section-head { text-align: center; }
+/* visible to screen readers only — used to flag links that open a new tab */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
 .section-title {
   margin: 10px 0 0;
   font-family: 'DM Serif Display', serif;
@@ -148,12 +160,26 @@ img { display: block; max-width: 100%; }
   line-height: 1.7;
   color: var(--body);
 }
+/* the cue line sits tight under the button instead of inheriting
+   .hero__copy's 26px gap */
+.hero__cta {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 6px;
+}
 .hero__actions {
   display: flex;
   gap: 16px;
   align-items: center;
-  margin-top: 6px;
   flex-wrap: wrap;
+}
+.hero__note {
+  margin: 0;
+  max-width: 420px;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--label);
 }
 .hero__media {
   position: relative;
@@ -194,6 +220,15 @@ img { display: block; max-width: 100%; }
 }
 .btn--solid:hover,
 .btn--solid:focus-visible { background: #3a4d6c; }
+/* subordinate text link — keeps the memory ask the page's only pill */
+.btn--quiet {
+  color: var(--accent);
+  padding-bottom: 3px;
+  border-bottom: 1px solid transparent;
+  transition: border-color .18s ease;
+}
+.btn--quiet:hover,
+.btn--quiet:focus-visible { border-bottom-color: var(--accent); }
 /* ============================================================
    THE SCENE — photo gallery
    ============================================================ */
@@ -345,6 +380,54 @@ img { display: block; max-width: 100%; }
 .visit-card__lines strong { color: var(--ink); }
 
 /* ============================================================
+   SHARE — the memory ask, picking up where the story leaves off
+   ============================================================ */
+.share { padding: 64px 56px; }
+.share__lede {
+  max-width: 620px;
+  margin: 26px auto 0;
+  font-size: 16.5px;
+  line-height: 1.75;
+  text-align: center;
+  color: var(--body);
+}
+.share__lede em { color: var(--accent); }
+
+.share__prompts {
+  list-style: none;
+  max-width: 620px;
+  margin: 22px auto 0;
+  padding: 0;
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: var(--body);
+}
+/* flex rather than a text marker so a wrapped prompt keeps its hanging
+   indent instead of running back under the dash */
+.share__prompts li {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+.share__prompts li::before {
+  content: '\2014';
+  color: var(--accent);
+  flex: none;
+}
+
+.share__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 32px;
+}
+.share__note {
+  font-size: 13.5px;
+  color: var(--label);
+}
+
+/* ============================================================
    FOOTER
    ============================================================ */
 .footer {
@@ -408,6 +491,7 @@ img { display: block; max-width: 100%; }
     visibility: hidden;
     transition: max-height .28s ease, visibility .28s ease;
   }
+  /* 5 links x 51px = 256px, measured down to a 320px viewport (none wrap) */
   .nav__links.is-open { max-height: 300px; visibility: visible; }
   .nav__links a {
     padding: 16px 22px;
@@ -428,6 +512,9 @@ img { display: block; max-width: 100%; }
   .hero__title { font-size: 42px; line-height: 1; }
   .hero__lede { font-size: 15.5px; max-width: none; }
   .hero__media { min-height: 280px; }
+  .hero__note { font-size: 13.5px; }
+  /* .btn--solid only: it stretches full-width inside .share__actions, so the
+     centring bites there. .btn--quiet is always content-width. */
   .btn--solid { text-align: center; }
 
   /* The Scene: tighter padding + 2-col grid; family banner a touch shorter */
@@ -463,6 +550,14 @@ img { display: block; max-width: 100%; }
   .visit-card { padding: 22px; border-radius: 12px; margin-top: 6px; }
   .visit-card__title { font-size: 19px; }
   .visit-card__lines { font-size: 14px; }
+
+  .share { padding: 36px 22px; }
+  /* centred ragged text stops being readable at this measure — the heading
+     stays centred, the paragraph goes left */
+  .share__lede { font-size: 15px; margin-top: 18px; text-align: left; }
+  .share__prompts { font-size: 14.5px; margin-top: 16px; }
+  .share__actions { margin-top: 26px; align-items: stretch; }
+  .share__note { text-align: center; }
 
   .footer__top {
     flex-direction: column;

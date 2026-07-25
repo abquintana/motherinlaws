@@ -18,7 +18,7 @@ python3 -m http.server 8000
 ## Structure
 
 ```
-index.html        markup (nav, hero, scene, menu, story/visit, footer)
+index.html        markup (nav, hero, scene, menu, story/visit, share, footer)
 styles.css        design tokens + responsive layout
 script.js         mobile nav toggle
 assets/images/    dish + scene photos
@@ -44,6 +44,20 @@ To extend the gallery, drop images into `assets/images/` and add `<img>` tags
 (with `width`/`height`) to `.scene__grid`. On mobile the feature row collapses
 to a single full-width `scene-family.jpeg` banner above a two-column grid.
 
+### The memory ask
+
+The point of the page is to collect memories of Doreen's cooking, so the ask
+appears twice. The hero CTA (`Tell us your Doreen story`) and the `#share`
+section both link out to a Google Form in a new tab; the nav's "Share a Memory"
+item anchors to `#share` in-page rather than jumping straight to the form, so
+visitors meet the explainer copy first.
+
+`#share` sits deliberately right after `#story` — the story ends on "this is us
+carrying it forward," which is the page's highest-intent moment, and the section
+picks that line up. Its three prompts (a dish, a saying, something you still
+cook) exist to defeat blank-page paralysis; they matter more to submissions than
+the button wording does. Keep them concrete if you revise the copy.
+
 ## Design notes
 
 - **Palette** — carried over verbatim from the approved design. The accent
@@ -56,3 +70,17 @@ to a single full-width `scene-family.jpeg` banner above a two-column grid.
   comp from the design.
 - **Interactivity** — nav links smooth-scroll to sections and the hamburger
   toggles the mobile menu. No backend.
+- **Link previews** — Open Graph + Twitter Card tags in the head, pointing at
+  `https://www.motherinlawsbistro.com/`. The page is shared person to person far
+  more than it's found by search, so the card matters. `og-share.jpeg` is a
+  1200×630 crop of `scene-family.jpeg` taken at the same 42% vertical bias the
+  CSS uses, so every platform shows identical framing rather than cropping the
+  4:3 original its own way. Absolute URLs are required — scrapers don't reliably
+  resolve relative ones — so these need updating if the domain ever changes.
+- **Analytics** — Vercel Web Analytics via the plain-HTML script tag
+  (`/_vercel/insights/script.js`), not the `@vercel/analytics` package, which
+  would need a build step this site doesn't have. Page views only. The endpoint
+  is served by Vercel once Analytics is enabled for the project and the site is
+  redeployed; anywhere else (including a local `http.server`) it 404s and the
+  page is unaffected. Custom events would additionally need the `window.va`
+  shim from Vercel's snippet, deliberately omitted while nothing fires events.
