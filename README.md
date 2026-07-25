@@ -70,6 +70,13 @@ the button wording does. Keep them concrete if you revise the copy.
   comp from the design.
 - **Interactivity** — nav links smooth-scroll to sections and the hamburger
   toggles the mobile menu. No backend.
+- **Link previews** — Open Graph + Twitter Card tags in the head, pointing at
+  `https://www.motherinlawsbistro.com/`. The page is shared person to person far
+  more than it's found by search, so the card matters. `og-share.jpeg` is a
+  1200×630 crop of `scene-family.jpeg` taken at the same 42% vertical bias the
+  CSS uses, so every platform shows identical framing rather than cropping the
+  4:3 original its own way. Absolute URLs are required — scrapers don't reliably
+  resolve relative ones — so these need updating if the domain ever changes.
 - **Analytics** — Vercel Web Analytics via the plain-HTML script tag
   (`/_vercel/insights/script.js`), not the `@vercel/analytics` package, which
   would need a build step this site doesn't have. Page views only. The endpoint
