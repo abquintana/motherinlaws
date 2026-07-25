@@ -220,15 +220,6 @@ img { display: block; max-width: 100%; }
 }
 .btn--solid:hover,
 .btn--solid:focus-visible { background: #3a4d6c; }
-/* subordinate text link — keeps the memory ask the page's only pill */
-.btn--quiet {
-  color: var(--accent);
-  padding-bottom: 3px;
-  border-bottom: 1px solid transparent;
-  transition: border-color .18s ease;
-}
-.btn--quiet:hover,
-.btn--quiet:focus-visible { border-bottom-color: var(--accent); }
 /* ============================================================
    THE SCENE — photo gallery
    ============================================================ */
@@ -380,7 +371,7 @@ img { display: block; max-width: 100%; }
 .visit-card__lines strong { color: var(--ink); }
 
 /* ============================================================
-   SHARE — the memory ask, picking up where the story leaves off
+   SHARE — the recipe ask, picking up where the story leaves off
    ============================================================ */
 .share { padding: 64px 56px; }
 .share__lede {
@@ -513,8 +504,7 @@ img { display: block; max-width: 100%; }
   .hero__lede { font-size: 15.5px; max-width: none; }
   .hero__media { min-height: 280px; }
   .hero__note { font-size: 13.5px; }
-  /* .btn--solid only: it stretches full-width inside .share__actions, so the
-     centring bites there. .btn--quiet is always content-width. */
+  /* .btn--solid stretches full-width inside .share__actions, so centre its label */
   .btn--solid { text-align: center; }
 
   /* The Scene: tighter padding + 2-col grid; family banner a touch shorter */
