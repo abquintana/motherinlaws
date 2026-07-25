@@ -169,7 +169,9 @@
       <p class="share__lede">If Doreen ever cooked for you, you already know the feeling &mdash; the plate that
         arrived before you thought to ask, the room that got warmer around it. Those evenings <em>are</em> the
         restaurant. Tell us about one, and we'll keep it here for everyone who never got a seat at her table.</p>
-      <ul class="share__prompts">
+      <!-- role="list" is redundant in most engines but Safari drops list
+           semantics from a ul once list-style is none -->
+      <ul class="share__prompts" role="list">
         <li>What did she make you, and where were you sitting?</li>
         <li>What do you remember her saying while she cooked?</li>
         <li>Is there something of hers you still make yourself?</li>

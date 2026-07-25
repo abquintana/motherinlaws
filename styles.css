@@ -491,8 +491,8 @@ img { display: block; max-width: 100%; }
     visibility: hidden;
     transition: max-height .28s ease, visibility .28s ease;
   }
-  /* headroom for the fifth link, which can wrap on narrow screens */
-  .nav__links.is-open { max-height: 360px; visibility: visible; }
+  /* 5 links x 51px = 256px, measured down to a 320px viewport (none wrap) */
+  .nav__links.is-open { max-height: 300px; visibility: visible; }
   .nav__links a {
     padding: 16px 22px;
     border-bottom: 1px solid var(--line);
