@@ -47,8 +47,8 @@ to a single full-width `scene-family.jpeg` banner above a two-column grid.
 ### The memory ask
 
 The point of the page is to collect memories of Doreen's cooking, so the ask
-appears twice. The hero CTA (`Tell us your Doreen story`) and the `#share`
-section both link out to a Google Form in a new tab; the nav's "Share a Memory"
+appears twice. The hero CTA (`Share a Doreen Recipe`) and the `#share`
+section both link out to a Google Form in a new tab; the nav's "Share a Recipe"
 item anchors to `#share` in-page rather than jumping straight to the form, so
 visitors meet the explainer copy first.
 
