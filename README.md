@@ -44,19 +44,20 @@ To extend the gallery, drop images into `assets/images/` and add `<img>` tags
 (with `width`/`height`) to `.scene__grid`. On mobile the feature row collapses
 to a single full-width `scene-family.jpeg` banner above a two-column grid.
 
-### The memory ask
+### The recipe ask
 
-The point of the page is to collect memories of Doreen's cooking, so the ask
-appears twice. The hero CTA (`Share a Doreen Recipe`) and the `#share`
+The point of the page is to collect Doreen's recipes — the dishes people still
+cook from memory — so the ask appears twice. The hero CTA (`Share a Doreen Recipe`) and the `#share`
 section both link out to a Google Form in a new tab; the nav's "Share a Recipe"
 item anchors to `#share` in-page rather than jumping straight to the form, so
 visitors meet the explainer copy first.
 
 `#share` sits deliberately right after `#story` — the story ends on "this is us
 carrying it forward," which is the page's highest-intent moment, and the section
-picks that line up. Its three prompts (a dish, a saying, something you still
-cook) exist to defeat blank-page paralysis; they matter more to submissions than
-the button wording does. Keep them concrete if you revise the copy.
+picks that line up. Its three prompts (the dish, how it goes, what she said
+while she cooked it) exist to defeat blank-page paralysis; they matter more to
+submissions than the button wording does. Keep them concrete if you revise the
+copy.
 
 ## Design notes
 
